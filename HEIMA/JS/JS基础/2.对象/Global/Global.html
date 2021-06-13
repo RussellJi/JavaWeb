@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Global</title>
+    </head>
+    <body>
+        <h1>Global</h1>
+        <script>
+            /*
+            */
+            var str = "纪浩瀚";
+            var str_url = "http://www.baidu.com/纪浩瀚";
+            document.write(encodeURI(str)+"</br>");
+            document.write(encodeURI(str_url)+"</br>");
+            document.write(encodeURIComponent(str)+"</br>");
+            document.write(encodeURIComponent(str_url)+"</br>");
+            var a = NaN;
+            document.write(a==NaN);  //false
+            document.write(isNaN(a)); //true
+            eval("alert('jhh')");
+        </script>
+    </body>
+</html>

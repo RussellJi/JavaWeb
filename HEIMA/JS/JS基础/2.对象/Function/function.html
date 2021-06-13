@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>function</title>
+    </head>
+    <body>
+        <h1>function</h1>
+        <script>
+            /*
+            */
+            var sum = 0;
+            var func = function(){
+                
+                for(var i = 0;i < arguments.length; i++){
+                    sum += arguments[i];
+                }
+                alert(sum);
+            }
+            func(1,2,3,4,5);
+        </script>
+    </body>
+</html>

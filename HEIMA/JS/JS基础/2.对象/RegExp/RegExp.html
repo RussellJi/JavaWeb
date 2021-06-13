@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RegExp</title>
+    </head>
+    <body>
+        <h1>RegExp</h1>
+        <script>
+            /*
+            */
+            var reg_name = new RegExp("^\\w{2,4}$");
+            var reg1 = new RegExp("^\\d{11,11}$");
+            var reg_num = /^\d{11,11}$/;
+
+            var str  = '17361564789';
+            var str1 = "jhhhh";
+            alert(reg_num.test(str));
+            alert(reg1.test(str));
+            alert(reg_name.test(str1));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>2.事件绑定</title>
+    </head>
+    <body>
+
+        <h1 id="h1" onclick="alert('我被点了');">pre</h1>
+        <h2 id="h2" onclick="func();">pre</h2>
+        <h2 id="h2_1" >pre</h2>
+        <script>
+            /*
+            */
+            var h1 = document.getElementById("h1");
+            var h2 = document.getElementById("h2");
+            var h2_1 = document.getElementById("h2_1");
+            //耦合度低，不侵入html
+            h2_1.onclick = func2;
+           
+            
+            function func(){
+                alert('我被点了');
+            }
+
+            function func2(){
+                alert("我要换内容了！");
+                h2_1.innerHTML = "post";
+            }
+        </script>
+        
+    </body> 
+</html>

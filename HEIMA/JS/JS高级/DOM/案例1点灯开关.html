@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>案例1 电灯开关</title>
+    </head>
+    <body>
+
+        <img src="src/img/on.jpg" id="light" alt="开">
+        <script>
+            /*
+            */
+            var light = document.getElementById("light");
+            var flag = true;
+            light.onclick = function(){
+                if(flag == true){
+                    light.src = "src/img/off.jpg";
+                    flag = false;
+                }else{
+                    light.src = "src/img/on.jpg";
+                    flag = true;
+                }
+                
+            }
+            
+           
+        </script>
+        
+    </body> 
+</html>
