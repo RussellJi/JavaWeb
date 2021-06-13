@@ -9,19 +9,22 @@
         <script>
             /*
             */
+            //获取DOM元素
             var light = document.getElementById("light");
             var flag = true;
-            light.onclick = function(){
+            
+            var func = function(){
                 if(flag == true){
+                    //改变元素的属性值
                     light.src = "src/img/off.jpg";
                     flag = false;
                 }else{
                     light.src = "src/img/on.jpg";
                     flag = true;
                 }
-                
             }
-            
+            //JS是一行一行执行的，函数的定义要放在函数调用的前面
+            light.onclick = func;
            
         </script>
         
