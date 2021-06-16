@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>17.DOM_Element对象</title>
+        <style>
+            div{
+                border:1px solid red;
+
+            }
+            #div1{
+                width:200px;
+                height:200px;
+            }            
+            #div2{
+                width:100px;
+                height:100px;
+            }
+            #div3{
+                width:50px;
+                height:50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div">
+            <div id = "div1">div1</div>
+            <div id = "div2">div2</div>
+            
+        </div>
+        <a href ="javascript:void();" id = "a1">删除元素</a>
+        <!-- <a href ="" id = "a1">删除元素</a> -->
+        <a href ="javascript:void();" id = "a2">增加元素</a>
+        <script>
+            /*
+            通过点击超链接，增加删除元素，document对象可以创建Element对象，所有DOM对象都可以看成Node结点，有appendchild 和 removechild方法
+            */
+            var div = document.getElementById("div");
+            var div1 = document.getElementById("div1");
+            var div2 = document.getElementById("div2");
+            var a1 = document.getElementById("a1");
+            var a2 = document.getElementById("a2");
+            var div3 = document.createElement("div");
+            div3.innerHTML = "div3";
+            div3.id = "div3";
+            a1.onclick = function(){ 
+                div.removeChild(div1);
+            }
+            a2.onclick = function(){
+                div.appendChild(div3);
+            }
+            
+           
+        </script>
+        
+    </body> 
+</html>

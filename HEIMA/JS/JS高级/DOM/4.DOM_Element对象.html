@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>17.DOM_Element对象</title>
+    </head>
+    <body>
+
+        <a>点我试试</a>
+        <input type="button" name="button_on" value="增加链接">
+        <input type="button" name="button_off" value="取消链接">
+        
+        <script>
+            /*
+            通过按钮设置DOM元素的属性  Element对象的 setAttribute方法
+            */
+            
+            var button1 = document.getElementsByName("button_on")[0];
+            var button2 = document.getElementsByName("button_off")[0];
+            button1.onclick = function () {
+                var Elem_a = document.getElementsByTagName("a")[0];
+                //Element.setAttribute(qualifiedName: string, value: string) 
+                Elem_a.setAttribute("href","http://www.baidu.com");
+            }
+            button2.onclick = function () {
+                var Elem_a = document.getElementsByTagName("a")[0];
+                Elem_a.removeAttribute("href");
+            }
+
+           
+        </script>
+        
+    </body> 
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>案例2轮播图</title>
+    </head>
+    <body>
+        <h1>案例2轮播图</h1>
+        <img id = "img" src = "src/img/on.jpg" width="400" height="">
+        <script>
+            /*
+            首页图片每三秒钟换一张
+            */
+            var img = document.getElementById("img");
+            var flag = 0;
+            var imgChange = function(){
+                if(flag == 0){
+                    img.src = "src/img/on.jpg";
+                    flag++;
+                }
+                else if(flag == 1){
+                    img.src = "src/img/off.jpg";
+                    flag++;
+                }else{
+                    img.src = "src/img/volleyball.png";
+                    flag = 0;
+                }
+
+            }
+            setInterval(imgChange,2000);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>6.案例4动态表格</title>
+        <style>
+            div{
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            table{
+                text-align: center;
+                margin: 10px auto;
+                width: 500px;
+                border: 1px  solid skyblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <input type="text" id="id" placeholder="id">
+            <input type="text" id="name" placeholder="name">
+            <input type="text" id="gender" placeholder="gender">
+            <input type="button" value="添加" id="add">
+        </div>
+        
+        <table id="table">
+            
+            <caption>学生信息表</caption>
+            <tbody id="body">
+                <tr id="tr">
+                    <th>编号</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>操作</th>
+                </tr>
+
+            </tbody>
+            
+        </table>
+        <script>
+            /*
+                动态表格
+                1.添加
+                    1.给添加按钮绑定单击事件
+                    2.获取文本框的内容
+                    3.创建td，设置td的文本为文本框的内容
+                    4.创建tr
+                    5.将td添加到tr中
+                    6.获取body，添加tr到body中
+            */
+            //
+            var add = document.getElementById("add");
+            var body = document.getElementById("body");
+            func_del = function(obj){
+                body.removeChild(obj.parentNode.parentNode);
+            }            
+
+            func_del = function(){
+                body.removeChild(this.parentNode.parentNode);//this指代window
+            }
+
+            add.onclick = function(){
+                //点击add按钮，创建一条tr
+                var tr = document.createElement("tr");
+                //将tr添加到tbody中
+                body.appendChild(tr);
+                //获取输入框的内容
+                var id = document.getElementById("id").value;
+                var name = document.getElementById("name").value;
+                var gender = document.getElementById("gender").value;
+                //创建td
+                var e_id = document.createElement("td");
+                e_id.innerHTML = id;
+                var e_name = document.createElement("td");
+                e_name.innerHTML = name;
+                var e_gender = document.createElement("td");
+                e_gender.innerHTML = gender;
+                //将td添加到tr中去
+                tr.appendChild(e_id);
+                tr.appendChild(e_name);
+                tr.appendChild(e_gender);
+                //创建del的td
+                var e_del = document.createElement("td");
+                //创建del的a
+                var del = document.createElement("a");
+                // 将del的a添加到del的td中去 
+                e_del.appendChild(del);
+
+                //var text_del = document.createTextNode("删除");
+                //del.appendChild(text_del);
+                
+                del.innerHTML = "删除";
+                //del.setAttribute("innerHTML","删除");
+                del.href = "javascript:void();";
+                del.onclick = func_del;
+                //del.setAttribute("href","javascript:void();");
+                //del.setAttribute("onclick","func_del(this)");
+
+                //将del的td添加到tr中去
+                tr.appendChild(e_del);
+                
+            }
+            //可用innerHTML用字符串拼接的方式添加元素
+            body.innerHTML += "<tr>"+"<td>"+202021040116+"</td>"+"</tr>";
+
+
+        </script>
+        
+    </body>
+</html>

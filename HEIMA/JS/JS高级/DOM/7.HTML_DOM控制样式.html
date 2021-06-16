@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML_DOM控制样式</title>
+        <style>
+            .div1 {
+                border: 3px solid orangered;
+                width:  300px;
+                text-align: center;
+                margin: 10px auto;
+                padding: 5px;
+            }
+            .div2 {
+                border: 2px solid rgb(57, 9, 187);
+                width:  200px;
+                text-align: center;
+                margin: 10px auto;
+                padding: 5px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div>div</div>
+        <div>div1</div>
+        <div>div2</div>
+        <script>
+            /*
+            通过HTML_DOM控制样式
+            */
+            //获取div元素
+            var div = document.getElementsByTagName("div")[0];
+            div.onclick = function(){
+                div.style.border = "3px solid red";
+                div.style.width = "200px";
+                div.style.textAlign = "center";
+                div.style.margin = "10px auto";
+                div.style.padding = "3px";
+            }
+            var div1 = document.getElementsByTagName("div")[1];
+            div1.onclick = function(){
+                div1.className = "div1";
+            }
+            var div2 = document.getElementsByTagName("div")[2];
+            div2.onclick = function(){
+                div2.className = "div2";
+            }
+        </script>
+    </body>
+</html>
