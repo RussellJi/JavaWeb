@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+    <form style="width:400px" id="form" onSubmit="return check();">
+        <div class="form-group" >
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            <input type="file" id="exampleInputFile">
+            <p class="help-block">Example block-level help text here.</p>
+        </div>
+        <div class="checkbox">
+            <label>
+              <input type="checkbox"> Check me out
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <script>
+        /*
+        表单校验
+        1.给form的submit绑定事件，判断各选项是否符合规范，都符合才返回true
+        2.给每个选项绑定一个聚焦事件，一旦离焦，判断是否标准
+        */
+        var form = document.getElementById("form");
+        var email = document.getElementById("exampleInputEmail1");
+        var passwd = document.getElementById("exampleInputPassword1");
+        var flag1 = false;
+        var flag2 = false;
+        window.onload = function(){
+            email.onblur = function(){
+                var reg_num = /^\d{11,11}@\w+\.\w+$/;
+                if(reg_num.test(email.value)){
+                    flag1 = true;
+                }else{
+                    //alert("邮箱不符合要求");
+                }
+            }
+            passwd.onblur = function(){
+                var reg_num = /^\w{8,}$/;
+                if(reg_num.test(passwd.value)){
+                    //alert("密码符合要求");
+                    flag2 = true;
+                }else{
+                    //alert("密码不符合要求");
+                }
+            }
+        }
+
+        var check =  function(){
+            return flag1&&flag2;
+        }
+    </script>
+  </body>
+</html>

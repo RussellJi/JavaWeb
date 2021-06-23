@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>8.常见事件演示</title>
+    </head>
+    <body>
+        <form action="#" id="form" onsubmit="return check();">
+            <input id="username" name="username">
+            <select id="city">
+                <option>北京</option>
+                <option>上海</option>
+                <option>泰安</option>
+                <option>杭州</option>
+            </select>
+            <input type="submit" value="提交">
+        </form>
+        <script>
+            /*
+            点击事件：
+                onclick
+                ondblclick
+            焦点事件：
+                onblur：失去焦点
+                onfocus：获得焦点
+            加载事件
+                onload 加载完成
+            鼠标事件
+                onmousedown
+                onmouseup
+                onmousemove
+                onmouseover
+            键盘事件
+                onkeydown
+                onkeyup
+                onkeypress
+            选择和改变
+                onchange
+                onselect
+            表单事件
+                onsubmit
+                onreset
+            */
+            var username = document.getElementById("username");
+            var city = document.getElementById("city");
+            var form = document.getElementById("form");
+            
+
+            //1.加载完成
+            window.onload = function(){
+                //2.失去焦点
+                username.onblur = function(){
+                    //alert("失去焦点！");
+                }
+                //3.鼠标悬浮
+                username.onmouseover = function (){
+                    //alert("鼠标来了");
+                }
+                //3.鼠标点击
+                username.onmousedown = function (){
+                    //alert("鼠标按下了");
+                }
+                //3.获取鼠标点击键
+                username.onmousedown = function (event){
+                    var btn_num  = event.button;
+                    if(btn_num == 0){
+                        //alert("鼠标左键按下了");
+                    }else if(btn_num ==1){
+                        //alert("鼠标中键按下了");
+                    }else{
+                        //alert("鼠标右键按下了");
+                    }
+                        
+                }
+                //3.获取键盘点击键
+                username.onkeydown = function(event){
+                    var key_num  = event.keyCode;
+                    //alert(event.keyCode);
+                    if(key_num == 13){
+                        alert("提交表单");
+                    }
+                }
+                //3.内容改变
+                city.onchange = function(){
+                    alert("改变了");
+                }
+
+                //4.表单提交
+                /*
+                form.onsubmit = function(){
+                    var flag = function(){
+                        var reg = ;
+                        return flag;
+                    }
+
+                    return flag;
+                }
+                */
+
+            }
+
+            //表单验证函数要放在onload方法体外部
+            var check = function(){
+                var reg = /^\w{2,5}$/;
+                return reg.test(username);
+            }
+
+        </script>
+        
+    </body>
+</html>
