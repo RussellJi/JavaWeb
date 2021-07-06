@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>案例3表情选择</title>
+    
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+            /*
+            表情选择
+            */
+            $(function(){
+                $("ul img").click(function(){
+                    //不可以直接用this.clone() 需要将js对象转为jq对象
+                    $("p img:last").after($(this).clone());
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <div class="emoji">
+            <ul>
+                <li><img src="img/01.gif" height="22" width="22" alt="" /></li>
+                <li><img src="img/02.gif" height="22" width="22" alt="" /></li>
+                <li><img src="img/03.gif" height="22" width="22" alt="" /></li>
+                <li><img src="img/04.gif" height="22" width="22" alt="" /></li>
+                <li><img src="img/05.gif" height="22" width="22" alt="" /></li>
+                <li><img src="img/06.gif" height="22" width="22" alt="" /></li>
+                <li><img src="img/07.gif" height="22" width="22" alt="" /></li>
+                <li><img src="img/08.gif" height="22" width="22" alt="" /></li>
+                <li><img src="img/09.gif" height="22" width="22" alt="" /></li>
+                <li><img src="img/10.gif" height="22" width="22" alt="" /></li>
+                <li><img src="img/11.gif" height="22" width="22" alt="" /></li>
+                <li><img src="img/12.gif" height="22" width="22" alt="" /></li>
+            </ul>
+            <p class="word">
+                <strong>请发言：</strong>
+                <img src="img/12.gif" height="22" width="22" alt="" />
+            </p>
+        </div>
+
+    </body>
+</html>
