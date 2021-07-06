@@ -20,15 +20,23 @@
             */
             $(function(){
                 var div = $("#div");
-               $("#btn").click(function(){
-                    div.css("background-color","pink");
+               //$("#btn").click(function(){
+                 //   div.css("background-color","pink");
+               //});
+               $("#btn1").on("click",function(){
+                   alert("我被点了");
+               })
+               $("#btn2").on("click",function(){
+                    $("#btn1").off("click");
                });
+
             });
 
         </script>
     </head>
     <body>
-        <input type="button" id="btn" value="switch">
+        <input type="button" id="btn1" value="on">
+        <input type="button" id="btn2" value="off">
         <div style="border: 2px solid black; width:400px; height: 300px;" id="div"></div>
     </body>
 </html>
