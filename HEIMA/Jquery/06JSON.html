@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>JSON</title>
+    
+        <script>
+            /*
+            JSON对象
+            取值
+            JSON对象与对象的转换
+            */
+            var p = {
+                name:"纪浩瀚",
+                age:23,
+                hobby:["打篮球","打排球"]
+            };
+            var p2 = {
+                name:"纪浩",
+                age:2,
+                hobby:["篮球","排球"]
+            };
+            var arr = [p,p2];
+            //alert(p["hobby"][1]);
+            for(key in p){
+                //alert(key+":"+p[key]);
+            }
+            for(person of arr){
+                for(key in person){
+                    alert(key+":"+person[key]);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
